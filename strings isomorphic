@@ -1,0 +1,21 @@
+def is_isomorphic(s, t):
+    if len(s) != len(t):
+        return False
+    s_to_t_mapping = {}
+    t_seen = set()
+    for i in range(len(s)):
+        if s[i] not in s_to_t_mapping:
+            if t[i] in t_seen:
+                return False
+            s_to_t_mapping[s[i]] = t[i]
+            t_seen.add(t[i])
+        else:
+            if s_to_t_mapping[s[i]] != t[i]:
+                return False
+    return True
+s1 = "egg"
+t1 = "add"
+print(is_isomorphic(s1, t1))  # Output: True
+s2 = "foo"
+t2 = "bar"
+print(is_isomorphic(s2, t2))  # Output: False
