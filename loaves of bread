@@ -1,0 +1,8 @@
+num_loaves = int(input("Enter the number of loaves of day old bread: "))
+regular_price = 185
+discount_percentage = 60 / 100
+discounted_price = regular_price * (1 - discount_percentage)
+total_price = num_loaves * discounted_price
+print("Regular Price per loaf:   {:>10.2f} rupees".format(regular_price))
+print("Discount:                 {:>10.2f} rupees".format(regular_price * discount_percentage))
+print("Total Price:              {:>10.2f} rupees".format(total_price))
